@@ -1,6 +1,6 @@
 import type { Core } from '@strapi/strapi';
 
-const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database => ({
+const config = ({ env }: Core.Config.Shared.ConfigParams): any => ({
   connection: {
     client: 'postgres',
     connection: {
@@ -8,7 +8,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database 
       ssl: {
         rejectUnauthorized: false
       },
-    },
+    } as any,
   },
 });
 
